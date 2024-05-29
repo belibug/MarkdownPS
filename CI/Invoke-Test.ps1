@@ -15,6 +15,7 @@ $srcPath = Resolve-Path -Path "$PSScriptRoot\..\Src"
 $outputFile = [System.IO.Path]::GetTempFileName() + '.xml'
 $codeCoveragePath = $outputFile.Replace('.xml', '.codecoverage.xml')
 
+$pesterConfiguration = New-PesterConfiguration
 $pesterConfiguration = [PesterConfiguration]@{
     Run          = @{
         Path     = $srcPath
